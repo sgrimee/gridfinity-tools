@@ -3,7 +3,31 @@ name = "gridfinity-tools"
 version = "0.1.0"
 description = "CLI tools for generating custom Gridfinity storage solutions"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.12"
+authors = [
+    { name = "Sam Grimee", email = "sam@grimee.be" },
+]
+keywords = [
+    "gridfinity",
+    "cadquery",
+    "3d-printing",
+    "cad",
+    "parametric",
+    "organization",
+    "storage",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
 dependencies = [
     "cadquery>=2.6.1",
     "cqkit>=0.5.6",
@@ -18,6 +42,11 @@ dev = [
     "mypy>=1.13.0",
     "pytest>=8.0.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/sgrimee/gridfinity-tools"
+Repository = "https://github.com/sgrimee/gridfinity-tools"
+Issues = "https://github.com/sgrimee/gridfinity-tools/issues"
 
 [project.scripts]
 gridfinity-tools = "gridfinity_tools.__main__:main"
@@ -65,7 +94,7 @@ no_implicit_optional = true
 warn_redundant_casts = true
 warn_unused_ignores = true
 strict_equality = true
-strict_concatenate = true
+extra_checks = true
 
 [[tool.mypy.overrides]]
 module = [
