@@ -23,7 +23,7 @@ def calculate_baseplate_units(drawer_mm: float) -> int:
     return int(drawer_mm // GRIDFINITY_UNIT)
 
 
-def calculate_baseplate_split(total_units: int, max_dimension_mm: int) -> list[int]:
+def calculate_baseplate_split(total_units: int, max_dimension_mm: float | int) -> list[int]:
     """Calculate how to split baseplate units to fit within max print dimension.
 
     Splits a baseplate into the minimum number of pieces needed to fit within
@@ -55,13 +55,14 @@ def calculate_baseplate_split(total_units: int, max_dimension_mm: int) -> list[i
         )
 
     total_mm = total_units * GRIDFINITY_UNIT
+    max_dim_mm = int(max_dimension_mm)
 
     # If it fits in one piece, return single piece
-    if total_mm <= max_dimension_mm:
+    if total_mm <= max_dim_mm:
         return [total_units]
 
     # Calculate minimum number of pieces needed
-    num_pieces = (total_mm + max_dimension_mm - 1) // max_dimension_mm
+    num_pieces = (total_mm + max_dim_mm - 1) // max_dim_mm
 
     # Distribute units as evenly as possible
     base_units = total_units // num_pieces
@@ -77,7 +78,10 @@ def calculate_baseplate_split(total_units: int, max_dimension_mm: int) -> list[i
 
 
 def calculate_split_grid(
-    width_units: int, depth_units: int, max_width_mm: int, max_depth_mm: int
+    width_units: int,
+    depth_units: int,
+    max_width_mm: float | int,
+    max_depth_mm: float | int,
 ) -> tuple[list[int], list[int]]:
     """Calculate 2D grid split for baseplate dimensions.
 
@@ -105,7 +109,10 @@ def calculate_split_grid(
 
 
 def calculate_total_pieces(
-    width_units: int, depth_units: int, max_width_mm: int, max_depth_mm: int
+    width_units: int,
+    depth_units: int,
+    max_width_mm: float | int,
+    max_depth_mm: float | int,
 ) -> int:
     """Calculate total number of baseplate pieces needed.
 
