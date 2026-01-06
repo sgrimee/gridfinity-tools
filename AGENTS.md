@@ -6,7 +6,7 @@
 
 - **Language**: Python 3.12+
 - **Package Manager**: uv (fast Python package installer)
-- **CAD Framework**: CadQuery 2.4.0
+- **CAD Framework**: CadQuery 2.6.1+
 - **Core Library**: cqgridfinity 0.5.7+
 - **Project Layout**: src-layout (PEP 420 compliant)
 
@@ -312,7 +312,7 @@ docs(readme): update installation instructions
 
 ### Core Dependencies
 
-- `cadquery==2.4.0` - Parametric 3D CAD modeling
+- `cadquery>=2.6.1` - Parametric 3D CAD modeling (requires 2.6.1+ for ARM macOS support)
 - `cqgridfinity>=0.5.7` - Gridfinity component library
 - `cqkit>=0.5.6` - CadQuery helper utilities
 

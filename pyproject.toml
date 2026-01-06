@@ -5,10 +5,9 @@ description = "CLI tools for generating custom Gridfinity storage solutions"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "cadquery==2.4.0",
+    "cadquery>=2.6.1",
     "cqkit>=0.5.6",
     "cqgridfinity>=0.5.7",
-    "numpy<2.0",  # Pin to 1.x for compatibility with nptyping used by CadQuery
 ]
 
 [project.optional-dependencies]
